@@ -3,7 +3,10 @@ from app.RollDice import roll
 
 def get_number_of_combatants():
     """Take no input and return tuple of ints."""
-    pass
+    attackers = raw_input('How many attackers?\n>')
+    defenders = raw_input('How many defenders?\n>')
+
+    return (attachers, defenders)
 
 
 def devine_winner(attack_roll, defend_roll):
