@@ -17,11 +17,15 @@ def get_number_of_combatants():
 
 
 def fight(combatants):
-    """Input tuple of ints and return tuple of ints."""
+    """Input tuple of ints and return tuple of list of ints."""
     attackers = combatants[0]
     defenders = combatants[1]
 
+    attack_rolls = []
+    defence_rolls = []
 
+    attack_rolls = roll.main(attackers, 6)
+    defence_rolls = roll.main(defenders, 6)
 
 
 def devine_winner(attack_roll, defend_roll):
