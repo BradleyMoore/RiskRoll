@@ -3,15 +3,25 @@ from app.RollDice import roll
 
 def get_number_of_combatants():
     """Take no input and return tuple of ints."""
-    attackers = raw_input('How many attackers?\n>')
-    defenders = raw_input('How many defenders?\n>')
+    num_of_attackers = [1,2,3]
+    num_of_defenders = [1,2]
+    attackers = 0
+    defenders = 0
+
+    while attackers not in num_of_attackers:
+        attackers = int(raw_input('How many attackers? [1,2,3]\n>'))
+    while defenders not in num_of_defenders:
+        defenders = int(raw_input('How many defenders? [1,2]\n>'))
 
     return (attachers, defenders)
 
 
 def fight(combatants):
     """Input tuple of ints and return tuple of ints."""
-    pass
+    attackers = combatants[0]
+    defenders = combatants[1]
+
+
 
 
 def devine_winner(attack_roll, defend_roll):
