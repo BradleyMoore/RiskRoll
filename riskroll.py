@@ -9,13 +9,13 @@ def get_number_of_combatants():
     return (attachers, defenders)
 
 
-def devine_winner(attack_roll, defend_roll):
-    """Take two lists of ints and return tuple."""
+def fight(combatants):
+    """Input tuple of ints and return tuple of ints."""
     pass
 
 
-def fight(combatants):
-    """Input tuple of ints and return tuple of ints."""
+def devine_winner(attack_roll, defend_roll):
+    """Take two lists of ints and return tuple."""
     pass
 
 
