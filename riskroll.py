@@ -37,6 +37,9 @@ def divine_winner(attack_rolls, defence_rolls):
     attack_rolls.sort()
     defence_rolls.sort()
 
+    attack_rolls.reverse()
+    defence_rolls.reverse()
+
     attack_wins = 0
     attack_losses = 0
     defence_wins = 0
@@ -44,11 +47,11 @@ def divine_winner(attack_rolls, defence_rolls):
 
     battles = 0
     if len(defence_rolls) < len(attack_rolls):
-        battles = len(defence_rolls) - 1
+        battles = len(defence_rolls)
     else:
-        battles = len(attack_rolls) - 1
+        battles = len(attack_rolls)
 
-    for i in xrange(battles, 0, -1):
+    for i in xrange(battles):
         if defence_rolls[i] >= attack_rolls[i]:
             defence_wins = defence_wins + 1
             attack_losses = attack_losses + 1
@@ -64,6 +67,7 @@ def divine_winner(attack_rolls, defence_rolls):
 
 
 def print_results(attack_rolls, defence_rolls, attack_wl, defence_wl):
+    print '\n'
     print 'Attacker rolls %r' % (attack_rolls)
     print 'Defender rolls %r' % (defence_rolls)
     print '\n'
