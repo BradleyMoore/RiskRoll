@@ -26,8 +26,8 @@ def fight(combatants):
     attack_rolls = []
     defence_rolls = []
 
-    attack_rolls = roll.main(attackers, 6)
-    defence_rolls = roll.main(defenders, 6)
+    attack_rolls = roll.main((attackers, 6))
+    defence_rolls = roll.main((defenders, 6))
 
     return (attack_rolls, defence_rolls)
 
