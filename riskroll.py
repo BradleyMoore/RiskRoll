@@ -42,7 +42,13 @@ def divine_winner(attack_rolls, defence_rolls):
     defence_wins = 0
     defence_losses = 0
 
-    for i in xrange(len(defence_rolls)-1, 0, -1):
+    battles = 0
+    if len(defence_rolls) < len(attack_rolls):
+        battles = len(defence_rolls) - 1
+    else:
+        battles = len(attack_rolls) - 1
+
+    for i in xrange(battles, 0, -1):
         if defence_rolls[i] >= attack_rolls[i]:
             defence_wins = defence_wins + 1
             attack_losses = attack_losses + 1
