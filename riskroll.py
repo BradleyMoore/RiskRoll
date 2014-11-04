@@ -34,7 +34,7 @@ def fight(combatants):
 
 def divine_winner(attack_rolls, defence_rolls):
     """Take two lists of ints and return tuple."""
-    attackrolls.sort()
+    attack_rolls.sort()
     defence_rolls.sort()
 
     attack_wins = 0
