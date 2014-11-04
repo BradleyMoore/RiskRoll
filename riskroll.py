@@ -1,3 +1,5 @@
+from sys import exit
+
 from app.RollDice import roll
 
 
@@ -7,7 +9,7 @@ def get_number_of_combatants():
     num_of_defenders = [1,2]
     attackers = 0
     defenders = 0
-
+    
     while attackers not in num_of_attackers:
         attackers = int(raw_input('How many attackers? [1,2,3]\n>'))
     while defenders not in num_of_defenders:
@@ -30,7 +32,7 @@ def fight(combatants):
     return (attack_rolls, defence_rolls)
 
 
-def devine_winner(attack_rolls, defence_rolls):
+def divine_winner(attack_rolls, defence_rolls):
     """Take two lists of ints and return tuple."""
     attackrolls.sort()
     defence_rolls.sort()
@@ -57,9 +59,27 @@ def devine_winner(attack_rolls, defence_rolls):
 
 def restart():
     """Determine if another go is needed."""
-    pass
+    options = ['s', 'd', 'x']
+
+    while again not in options:
+        again = raw_input('Roll the [s]ame, [d]ifferent, or e[x]it...\n>')
+
+    if again == 's':
+        return True
+    elif again == 'd':
+        return False
+    else:
+        exit()
 
 
 if __name__ == '__main__':
-    pass
+    repeat = False
+
+    while True:
+        if repeat == False:
+            num_combatants = get_number_of_combatants()
+
+        attack_rolls, defence_rolls = fight(num_combatants)
+        attack_wl, defence_wl = divine_winner(attack_rolls, defence_rolls)
+        repeat = restart()
 
