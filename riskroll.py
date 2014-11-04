@@ -57,6 +57,15 @@ def divine_winner(attack_rolls, defence_rolls):
     return (attack_wl, defence_wl)
 
 
+def print_results(attack_rolls, defence_rolls, attack_wl, defence_wl):
+    print 'Attacker rolls %r' % (attack_rolls)
+    print 'Defender rolls %r' % (defence_rolls)
+    print '\n'
+    print 'Attacker wins %d and loses %d' % (attack_wl[0], attack_wl[1])
+    print 'Defender wins %d and loses %d' % (defence_wl[0], defence_wl[1])
+    print '\n'
+
+
 def restart():
     """Determine if another go is needed."""
     options = ['s', 'd', 'x']
@@ -81,5 +90,8 @@ if __name__ == '__main__':
 
         attack_rolls, defence_rolls = fight(num_combatants)
         attack_wl, defence_wl = divine_winner(attack_rolls, defence_rolls)
+
+        print_results(attack_rolls, defence_rolls, attack_wl, defence_wl)
+
         repeat = restart()
 
