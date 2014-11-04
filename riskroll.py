@@ -15,7 +15,7 @@ def get_number_of_combatants():
     while defenders not in num_of_defenders:
         defenders = int(raw_input('How many defenders? [1,2]\n>'))
 
-    return (attachers, defenders)
+    return (attackers, defenders)
 
 
 def fight(combatants):
