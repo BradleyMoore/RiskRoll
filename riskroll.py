@@ -42,7 +42,7 @@ def divine_winner(attack_rolls, defence_rolls):
     defence_wins = 0
     defence_losses = 0
 
-    for i in xrange(len(defence_rolls), 0, -1):
+    for i in xrange(len(defence_rolls)-1, 0, -1):
         if defence_rolls[i] >= attack_rolls[i]:
             defence_wins = defence_wins + 1
             attack_losses = attack_losses + 1
@@ -69,6 +69,7 @@ def print_results(attack_rolls, defence_rolls, attack_wl, defence_wl):
 def restart():
     """Determine if another go is needed."""
     options = ['s', 'd', 'x']
+    again = ''
 
     while again not in options:
         again = raw_input('Roll the [s]ame, [d]ifferent, or e[x]it...\n>')
